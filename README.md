@@ -55,6 +55,14 @@ Setup your development environment by the following steps.
 ```bash
 export REGISTRY=<your docker username>
 ```
+- For AWS ECR
+
+```bash
+export REGISTRY=<accountid>.dkr.ecr.<Region>.amazonaws.com
+```
+- Changes in build/push
+  Replace this "sudo docker login "${REGISTRY}" -u "${DNAME}" -p "${DPASS}";" with
+  aws ecr get-login-password --region <Region> | docker login --username AWS --password-stdin "${REGISTRY}"
 
 - Build a developer image with all dependencies:
 ```bash
