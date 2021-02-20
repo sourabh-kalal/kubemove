@@ -61,8 +61,9 @@ export REGISTRY=<your docker username>
 export REGISTRY=<accountid>.dkr.ecr.<Region>.amazonaws.com
 ```
 - Changes in build/push
-  Replace this "sudo docker login "${REGISTRY}" -u "${DNAME}" -p "${DPASS}";" with
-  aws ecr get-login-password --region <Region> | docker login --username AWS --password-stdin "${REGISTRY}"
+
+  Replace this `sudo docker login "${REGISTRY}" -u "${DNAME}" -p "${DPASS}";` with
+  `aws ecr get-login-password --region <Region> | docker login --username AWS --password-stdin "${REGISTRY}"`
 
 - Build a developer image with all dependencies:
 ```bash
@@ -194,4 +195,3 @@ We welcome participation from the community in defining more use cases, developi
 If you would like to know the ongoing work and its status, you can join us at status [meeting](<https://meet.google.com/ueh-fycm-aex>) that happens every Monday / Wednesday / Friday at 2.30 PM IST.
 
 Minutes of meeting are captured in this [doc](<https://docs.google.com/document/d/1B7y28-WUiOy_RnFVbGF59BDYOMYXV5cPTnfxBbcFXp4/edit?usp=sharing>)
-
